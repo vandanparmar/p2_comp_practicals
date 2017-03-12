@@ -47,16 +47,13 @@ m = 8
 
 D1 = 5e-3
 
-array_sizes = 2**16
+array_sizes = 2**18
 x1 = np.fft.fftshift(np.fft.fftfreq(array_sizes,L/array_sizes))
 x1 = x1*l*D1/(2*np.pi)
 A1 = central_slit(array_sizes,d1,L,l,D1)
 fft1 = np.fft.fftshift(np.fft.fft(A1))
 fft12 = np.abs(fft1)**2
 fft12 = fft12/np.max(fft12)
-#plt.plot(x,analytic,'r',label='Analytic')
-# plt.plot(x1,np.real(fft1), 'b', label='FFT')
-# plt.plot(x1,np.imag(fft1), 'g', label='IMAG FFT')
 plt.plot(x1,fft12,'r',label = '')
 plt.xlabel('y / m')
 plt.ylabel('Relative Intensity')
@@ -70,9 +67,6 @@ A2 = central_slit_phase(array_sizes,d2,L,s,m,l,D2)
 fft2 = np.fft.fftshift(np.fft.fft(A2))
 fft22 = np.abs(fft2)**2
 fft22 = fft22/np.max(fft22)
-#plt.plot(x,analytic,'r',label='Analytic')
-# plt.plot(x2,np.real(fft2), 'b', label='FFT')
-# plt.plot(x2,np.imag(fft2), 'g', label='IMAG FFT')
 plt.plot(x2,fft22,'r',label = '')
 plt.xlabel('y / m')
 plt.ylabel('Relative Intensity')
