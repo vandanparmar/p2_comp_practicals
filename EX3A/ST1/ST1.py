@@ -47,7 +47,7 @@ m = 8
 
 D1 = 5e-3
 
-array_sizes = 2**18
+array_sizes = 2**20
 x1 = np.fft.fftshift(np.fft.fftfreq(array_sizes,L/array_sizes))
 x1 = x1*l*D1/(2*np.pi)
 A1 = central_slit(array_sizes,d1,L,l,D1)
